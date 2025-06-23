@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="NewsToday is your daily source for the latest news, covering international, sports, and entertainment stories."
+		/>
+		<meta name="author" content="Onu Wisdom" />
+
+		<meta property="og:title" content="NewsToday" />
+		<meta
+			property="og:description"
+			content="NewsToday is your daily source for the latest news, covering international, sports, and entertainment stories."
+		/>
+		<meta property="og:type" content="website" />
+
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<script src="script.js" defer></script>
+		<title>NewsToday</title>
+	</head>
+	<body>
+		<header class="header">
+			<div class="nav-container">
+				<div class="logo">
+					<h1>NewsToday</h1>
+					<p>Go to For the latest news</p>
+				</div>
+				<nav class="nav-bar">
+					<ul class="nav-links">
+						<li><a href="#/">Home</a></li>
+						<li><a href="#international">International</a></li>
+						<li><a href="#sports">Sports</a></li>
+						<li><a href="#entertainment">Entertainment</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="marque">
+				<marquee behavior="scroll" direction="left" id="news-marquee">
+				</marquee>
+			</div>
+		</header>
+
+		<!-- The Main Content -->
+		<main class="main-content">
+			<!-- The Breaking News Section -->
+			<section class="news-section" id="international">
+				<p class="first-p">
+					Friday, October 20, 2023 | Last Updated: 3:45:42 PM
+				</p>
+
+				<div class="top-container">
+					<div class="hot">HOT</div>
+
+					<h2>BREAKING NEWS</h2>
+					<div class="breaking-news">
+						<!-- Dynamically Inputted Here -->
+					</div>
+				</div>
+			</section>
+
+			<section class="news-section" id="news-stories">
+				<h2 class="stories-h">TOP STORIES</h2>
+				<div class="bottom-container">
+					<article class="top-stories" id="top-stories">
+						<!-- Dynamically Here -->
+					</article>
+
+					<aside class="aside">
+						<div class="aside-container">
+							<div class="container">
+								<div class="search">
+									<h3>Search News</h3>
+									<form action="#" method="get" class="search-form">
+										<input
+											type="text"
+											name="search"
+											placeholder="Search news..."
+										/>
+										<button type="button" class="form-btn">Go</button>
+									</form>
+								</div>
+							</div>
+
+							<div class="container">
+								<div class="weather-updates">
+									<h3>Weather Updates</h3>
+									<p>22°C</p>
+									<select name="states" id="states">
+										<option value="california">California</option>
+										<option value="texas">Texas</option>
+										<option value="florida">Florida</option>
+										<option value="new-york">New York</option>
+										<option value="illinois">Illinois</option>
+									</select>
+									updated: October 20, 2023
+								</div>
+							</div>
+
+							<div class="container">
+								<div class="trending">
+									<h3>Trending News</h3>
+									<ul class="trending-list">
+										<li><a href="#">New Tech Innovations in 2023</a></li>
+										<li><a href="#">Global Economic Outlook</a></li>
+										<li><a href="#">Health Tips for the Winter Season</a></li>
+										<li><a href="#">Upcoming Music Festivals</a></li>
+										<li><a href="#">Travel Destinations for 2024</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="container">
+								<div class="subscribe">
+									<h3>Subscribe to Newsletter</h3>
+									<form action="#" method="post" class="subscribe-form">
+										<input
+											type="email"
+											name="email"
+											placeholder="Enter your email"
+											required
+										/>
+										<button type="submit" class="sub-btn">Subscribe</button>
+									</form>
+								</div>
+							</div>
+
+							<div class="container special-offers">
+								<div class="special-offer">
+									<h3>Special Offers</h3>
+									<p>Get exclusive discounts on our premium content!</p>
+									<button type="button" class="offer-btn">CLICK HERE</button>
+								</div>
+							</div>
+						</div>
+					</aside>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="upper-footer">
+				<div class="logo">
+					<h1>NewsToday</h1>
+					<p>Your daily source for the latest news</p>
+				</div>
+
+				<div class="category">
+					<h3>Categories</h3>
+					<ul>
+						<li><a href="#international">International</a></li>
+						<li><a href="#sports">Sports</a></li>
+						<li><a href="#entertainment">Entertainment</a></li>
+						<li><a href="#technology">Technology</a></li>
+						<li><a href="#health">Health</a></li>
+					</ul>
+				</div>
+
+				<div class="company">
+					<h3>Company</h3>
+					<ul>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+						<li><a href="#privacy">Privacy Policy</a></li>
+						<li><a href="#terms">Terms of Service</a></li>
+					</ul>
+				</div>
+
+				<div class="follow-us">
+					<h3>Follow Us</h3>
+					<ul>
+						<li><a href="#facebook">Facebook</a></li>
+						<li><a href="#twitter">Twitter</a></li>
+						<li><a href="#instagram">Instagram</a></li>
+						<li><a href="#linkedin">LinkedIn</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="lower-footer">
+				<p>&copy; 2023 NewsToday News. All rights reserved.</p>
+				<p>
+					Designed by
+					<a href="https://wisdomseven-portfolio.netlify.app/">Wisdom Seven</a>"
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
