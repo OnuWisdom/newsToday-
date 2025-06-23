@@ -40,7 +40,7 @@ async function displayNewsSection() {
 		newsCard.classList.add('news-card');
 		newsCard.innerHTML = `
 							<div class="image-container">
-								<img src="${article.urlToImage || 'car.jpg'} " alt="${
+								<img src="${article.urlToImage || './assets/NoImage.png'} " alt="${
 			article.title
 		} " class="image1" />
 							</div>
@@ -111,7 +111,7 @@ async function displayTopStories() {
 		const storiesCard = document.createElement('div');
 		storiesCard.classList.add('news-card');
 		storiesCard.innerHTML = `<div class="image-container">
-								<img src="${article.urlToImage || 'car.jpg'} " alt="${
+								<img src="${article.urlToImage || './assets/NoImage.png'} " alt="${
 			article.title
 		} " class="image1" />
 							</div>
