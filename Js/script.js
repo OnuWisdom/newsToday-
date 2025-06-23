@@ -134,6 +134,30 @@ async function displayTopStories() {
 	});
 }
 
+function updateDateTime() {
+	const now = new Date();
+
+	// Format the date and time
+	const options = {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+		hour: '2-digit',
+		minute: '2-digit',
+		second: '2-digit',
+	};
+	const formattedDateTime = now.toLocaleString('en-US', options);
+
+	// Display in the DOM
+	document.getElementById('current-datetime').textContent = formattedDateTime;
+}
+
+// Update every second to keep the time current
+setInterval(updateDateTime, 1000);
+
+// Call the function initially to display immediately
+updateDateTime();
 displayNewsInMarquee();
 displayNewsSection();
 displayTopStories();
