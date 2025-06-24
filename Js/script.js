@@ -2,6 +2,7 @@ const apiKey = '97bc26f9cb214d6dbfa122ca1f316946';
 const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 const apiUrl2 = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`;
 
+// Function to fetch News
 async function getNews(endpoint) {
 	try {
 		const response = await fetch(
@@ -29,6 +30,7 @@ async function getNews(endpoint) {
 	}
 }
 
+// Function to display News in the Breaking news section
 async function displayNewsSection() {
 	const articles = await getNews(apiUrl);
 
@@ -64,6 +66,7 @@ async function displayNewsSection() {
 	});
 }
 
+// Function to display news in the marquee animation
 async function displayNewsInMarquee() {
 	const articles = await getNews(apiUrl);
 	const newsMarquee = document.getElementById('news-marquee');
@@ -85,6 +88,7 @@ async function displayNewsInMarquee() {
 		.join(' | ');
 }
 
+// Function to display new s in the top stories section
 async function displayTopStories() {
 	const articles = await getNews(apiUrl2);
 
@@ -117,6 +121,7 @@ async function displayTopStories() {
 	});
 }
 
+// Function to update the day and time
 function updateDateTime() {
 	const now = new Date();
 
