@@ -107,7 +107,7 @@ async function displayTopStories() {
 
 	const topStoriesContainer = document.getElementById('top-stories');
 
-	articles.forEach((article) => {
+	articles.slice(0, 8).forEach((article) => {
 		const storiesCard = document.createElement('div');
 		storiesCard.classList.add('news-card');
 		storiesCard.innerHTML = `<div class="image-container">
