@@ -2,10 +2,11 @@ const apiKey = '97bc26f9cb214d6dbfa122ca1f316946';
 const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 const apiUrl2 = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`;
 
-async function getNews() {
+async function getNews(endpoint) {
 	try {
 		const response = await fetch(
-			apiUrl
+			//apiUrl
+			endpoint
 			//.replace('keyword', 'technology') // Replace 'technology' with your desired keyword
 		);
 		if (!response.ok) {
@@ -29,7 +30,7 @@ async function getNews() {
 }
 
 async function displayNewsSection() {
-	const articles = await getNews();
+	const articles = await getNews(apiUrl);
 
 	const breakingNewsContainer = document.querySelector('.breaking-news');
 
@@ -64,7 +65,7 @@ async function displayNewsSection() {
 }
 
 async function displayNewsInMarquee() {
-	const articles = await getNews();
+	const articles = await getNews(apiUrl);
 	const newsMarquee = document.getElementById('news-marquee');
 	if (!newsMarquee) {
 		console.error('Marquee element not found!');
@@ -84,26 +85,8 @@ async function displayNewsInMarquee() {
 		.join(' | ');
 }
 
-async function fetchEverythingNews() {
-	try {
-		const response = await fetch(
-			apiUrl2
-			//.replace('keyword', 'technology') // Replace 'technology' with your desired keyword
-		);
-		if (!response.ok) {
-			throw new Error('Failed to fetch news');
-		}
-		const data = await response.json();
-
-		return data.articles;
-	} catch (error) {
-		console.error('Error fetching news:', error);
-		return [];
-	}
-}
-
 async function displayTopStories() {
-	const articles = await fetchEverythingNews();
+	const articles = await getNews(apiUrl2);
 
 	const topStoriesContainer = document.getElementById('top-stories');
 
