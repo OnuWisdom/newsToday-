@@ -1,22 +1,17 @@
-// Remove the hardcoded API key and URLs
-// Add a function to fetch news from the backend
-async function getNewsFromBackend(endpoint) {
-	try {
-		const response = await fetch(endpoint);
-		if (!response.ok) {
-			throw new Error('Failed to fetch news');
-		}
-		const data = await response.json();
-		return data.articles || [];
-	} catch (error) {
-		console.error('Error fetching news:', error);
-		return [];
-	}
-}
+const apiKey = '97bc26f9cb214d6dbfa122ca1f316946';
+const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+const apiUrl2 = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`;
+
+fetch('./Js/getNews.js')
+	.then((res) => res.json())
+	.then((data) => {
+		console.log(data); // Use the data to update the DOM
+	})
+	.catch((err) => console.error('Error fetching data:', err));
 
 // Function to display News in the Breaking news section
 async function displayNewsSection() {
-	const articles = await getNewsFromBackend('/api/news');
+	const articles = await getNews(apiUrl);
 
 	const breakingNewsContainer = document.querySelector('.breaking-news');
 
@@ -52,7 +47,7 @@ async function displayNewsSection() {
 
 // Function to display news in the marquee animation
 async function displayNewsInMarquee() {
-	const articles = await getNewsFromBackend('/api/news');
+	const articles = await getNews(apiUrl);
 	const newsMarquee = document.getElementById('news-marquee');
 	if (!newsMarquee) {
 		console.error('Marquee element not found!');
@@ -74,7 +69,7 @@ async function displayNewsInMarquee() {
 
 // Function to display new s in the top stories section
 async function displayTopStories() {
-	const articles = await getNewsFromBackend('/api/news?type=top');
+	const articles = await getNews(apiUrl2);
 
 	const topStoriesContainer = document.getElementById('top-stories');
 
